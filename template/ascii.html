@@ -1,0 +1,108 @@
+<!doctype html>
+<head>
+  <html lang="fr">
+  <script src="/static/anim.js"></script>
+  <link rel="stylesheet" href="../static/style.css">
+  <meta charset="utf-8">
+  <title>Ascii Art Web</title>
+</head>
+
+<body class="body">
+  <h1>Ascii Art Web</h1>
+  <h2>Enter your string to convert</h2>
+  <form action="/result" method="post">
+    <div class="blockbutton">
+			<textarea id="text" name="text" rows="3" cols="22" required></textarea>
+      <div class="flex-container">
+        <h3>Select the banner:</h3>
+        <select id="banner" name="banner">
+          <option value="Standard" id="Standard" selected>Standard</option>
+          <option value="Shadow" id="Shadow">Shadow</option>
+          <option value="Thinkertoy" id="Thinkertoy">Thinkertoy</option>
+        </select>
+      </div>
+      <h3>Select the color:</h2>
+    </div>
+    <div class="couleurs">
+      <label class="orange">
+      <input name="color" value="orange" onclick="updateHexValue(this)">
+      <div class="layer"></div>
+      <div class="button"><span></span></div>
+    </label>
+    
+    <label class="amber">
+      <input name="color" value="amber" onclick="updateHexValue(this)">
+      <div class="layer"></div>
+      <div class="button"><span></span></div>
+    </label>
+    
+    <label class="lime">
+      <input name="color" value="lime" onclick="updateHexValue(this)">
+      <div class="layer"></div>
+      <div class="button"><span></span></div>
+    </label>
+    
+    <label class="teal">
+      <input name="color" value="teal" onclick="updateHexValue(this)">
+      <div class="layer"></div>
+      <div class="button"><span></span></div>
+    </label>
+    
+    <label class="blue">
+      <input name="color" value="blue" onclick="updateHexValue(this)">
+      <div class="layer"></div>
+      <div class="button"><span></span></div>
+    </label>
+    
+    <label class="indigo">
+      <input name="color" value="indigo" onclick="updateHexValue(this)">
+      <div class="layer"></div>
+      <div class="button"><span></span></div>
+    </label>
+  </div>
+    <!-- Add the new textarea element here -->
+    <br><br><textarea id="colorhex" name="colorhex" class="text2" rows="1" cols="12" readonly></textarea><br><br>
+    
+    <button type="submit">Generate</button>
+  </form>
+</body>
+
+<!-- Add the JavaScript code here -->
+<script>
+  function updateHexValue(input) {
+    const hexValues = {
+      orange: "#FFA07A",
+      amber: "#FFC107",
+      lime: "#32CD32",
+      teal: "#009688",
+      blue: "#2196F3",
+      indigo: "#3F51B5"
+    };
+    const hexValue = hexValues[input.value];
+    document.getElementById("colorhex").value = hexValue;
+  }
+</script>
+
+<style>
+	.flex-container {
+			display: flex;
+			flex-wrap: nowrap;
+			align-items: center;
+			justify-content: center;
+			gap: 10px;
+		}
+		
+	.flex-container textarea {
+			margin-right: 20px; /* Ajouté pour créer un espace entre les éléments */
+			gap: 10px;
+		}
+		
+	.flex-container select {
+			margin-top: 5px; /* Conserver la mise à jour précédente */
+	}
+* {
+  margin: 1%;
+  padding: 0;
+  box-sizing: border-box;
+}
+	</style>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body class="body">
+  <h1>Your ASCII ART</h1>
+  <form action="/ascii-art" method="post">
+    <pre id="result" class="result">
+      <p>{{ .Result }}</p>
+    </pre>
+    <button type="submit">Go back</button>
+  </form><br>
+  <div id="ascii-art-result">
+    <a class="download" href="/download?file={{.DownloadLink}}" download="ascii-art.txt">Download</a>
+  </div>
+</body>
+</html>
+
+<style>
+  .download {
+    font-size: 3vw;
+    color: white;
+  }
+  .result {
+    font-size: 0.8vw;
+    font-weight: bolder;
+    background-color: rgba(255, 255, 255, 0.37);
+    background-color: #ffffff7c;
+    background-size: 80%;
+    border-radius: 1vw;
+  }
+</style>
